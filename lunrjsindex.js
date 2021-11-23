@@ -2,18 +2,18 @@ var documents = [
 
 {
     "id": 0,
-    "uri": "02_about/index.html",
-    "menu": "about",
-    "title": "About",
-    "text": " Table of Contents About this project About this project lorem ipsum "
-},
-
-{
-    "id": 1,
     "uri": "01_intro/010_readme.html",
     "menu": "intro",
     "title": "Readme",
     "text": " Unresolved directive in &lt;stdin&gt; - include::../../README.adoc[leveloffset=+1] add some more info "
+},
+
+{
+    "id": 1,
+    "uri": "02_about/index.html",
+    "menu": "about",
+    "title": "About",
+    "text": " Table of Contents About this project About this project lorem ipsum "
 },
 
 {

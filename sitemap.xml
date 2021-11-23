@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
-    	<loc>https://localhost/02_about/index.html</loc>
+    	<loc>https://localhost/01_intro/010_readme.html</loc>
     	<lastmod>2021-11-23</lastmod>
     </url>
 
     <url>
-    	<loc>https://localhost/01_intro/010_readme.html</loc>
+    	<loc>https://localhost/02_about/index.html</loc>
     	<lastmod>2021-11-23</lastmod>
     </url>
 
