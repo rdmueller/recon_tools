@@ -1,0 +1,38 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Set a branch name to trigger deployment
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    env:
+      DTC_HEADLES: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup
+        run: chmod +x dtcw
+      - name: exportExcel
+        run: ./dtcw exportExcel
+      - name: generateSite
+        run: ./dtcw generateSite
+      - name: removeDraft
+        run: find build/microsite/output/. -name "*-draft.html" -type f -delete
+      - name: generatePdf
+        run: ./dtcw generatePdf
+      - name: htmlSanityCheck
+        run: ./dtcw htmlSanityCheck
+      - name: copyToPublic
+        run: cp -r ./build/pdf ./build/microsite/output && cp -r ./build/report/htmlchecks ./build/microsite/output && cp -r ./build/microsite/output ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        #        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

@@ -61,13 +61,16 @@ class ReconToolsTest < Minitest::Test
     @logger.info "Tests Starting"
 
     assert_equal "hello", "hello", 'Test the test'
+
+    # tag::myTest[]
     recon_tools = ReconTools.new(arrays1, arrays2)
-    assert_equal [], recon_tools.duplicate_data1_records, "Should be 0 duplicates"
+    assert_equal [], recon_tools.duplicate_data1_records, "Should be 0 duplicates" # <1>
     assert_equal [["c", 4, 6]], recon_tools.duplicate_data2_records, "Should be 1 duplicate record"
     assert_equal ["a"], recon_tools.matched_records.keys, "Should be 1 matche  keys: a"
     assert_equal ["a", 1, 3], (recon_tools.matched_records["a"]), "Check all elments of array match"
     assert_equal ["b"], recon_tools.updated_records.keys, "Should be 1 matche  keys: b"
     assert_equal ["b", 2, 3], (recon_tools.updated_records["b"]), "Check all elments of array match"
+    # end::myTest[]
 
     assert_equal ["c","e"], recon_tools.new_records.keys, "Should be 2 matches  keys: c & e"
     assert_equal ["c", 4, 5], (recon_tools.new_records["c"]), "Check all elments of array match"
@@ -101,6 +104,7 @@ class ReconToolsTest < Minitest::Test
     components_from_jira = jira_connect.parseComponentsJSON(JSON.pretty_generate(components))
     components_from_jira = components_from_jira.each { |e| e.delete_at(0)}
     @logger.debug "end run_integration_tests"
+
 
     googlesheets_connect = GoogleSheetsConnect.new()
     sheet_data = googlesheets_connect.read_sheet_data "Recon Tools Test Data"
