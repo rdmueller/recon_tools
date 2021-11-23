@@ -62,25 +62,25 @@ microsite.with {
     //see 'copyTheme' for more details
     siteFolder = '../site'
 
-    // the title of the microsite, displayed in the upper left corner
-    title = '##site-title##'
     // the next items configure some links in the footer
     //
     // contact eMail
     // example: mailto:bert@example.com
-    footerMail = '##footer-email##'
+    footerMail = ''
     //
     // twitter account url
-    footerTwitter = '##twitter-url##'
+    footerTwitter = ''
     //
     // Stackoverflow QA
-    footerSO = '##Stackoverflow-url##'
+    footerSO = ''
     //
     // Github Repository
-    footerGithub = '##Github-url##'
+    footerGithub = 'https://github.com/coder-chris/recon_tools'
     //
     // Slack Channel
-    footerSlack = '##Slack-url##'
+    footerSlack = ''
+
+    footerGem = 'https://rubygems.org/gems/recon_tools/'
     //
     // Footer Text
     // example: <small class="text-white">built with docToolchain and jBake <br /> theme: docsy</small>
@@ -91,11 +91,11 @@ microsite.with {
     //
     // the url to create an issue in github
     // Example: https://github.com/docToolchain/docToolchain/issues/new
-    issueUrl = '##issue-url##'
+    issueUrl = 'https://github.com/coder-chris/recon_tools/issues/new'
     //
     // the base url for code files in github
     // Example: https://github.com/doctoolchain/doctoolchain/edit/master/src/docs
-    gitRepoUrl = '##git-repo-url##'
+    gitRepoUrl = 'https://github.com/coder-chris/recon_tools/tree/main/src/docs'
 
     //
     // the location of the landing page
