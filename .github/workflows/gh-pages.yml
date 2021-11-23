@@ -18,16 +18,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup
         run: chmod +x dtcw
-      - name: exportExcel
-        run: ./dtcw exportExcel
       - name: generateSite
         run: ./dtcw generateSite
       - name: removeDraft
         run: find build/microsite/output/. -name "*-draft.html" -type f -delete
       - name: generatePdf
         run: ./dtcw generatePdf
-      - name: htmlSanityCheck
-        run: ./dtcw htmlSanityCheck
       - name: copyToPublic
         run: cp -r ./build/pdf ./build/microsite/output && cp -r ./build/report/htmlchecks ./build/microsite/output && cp -r ./build/microsite/output ./public
       - name: Deploy
