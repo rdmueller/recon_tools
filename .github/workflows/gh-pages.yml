@@ -23,7 +23,7 @@ jobs:
       - name: removeDraft
         run: find build/microsite/output/. -name "*-draft.html" -type f -delete
       - name: copyToPublic
-        run: cp -r ./build/pdf ./build/microsite/output && cp -r ./build/report/htmlchecks ./build/microsite/output && cp -r ./build/microsite/output ./public
+        run: cp -r ./build/microsite/output ./public
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         #        if: ${{ github.ref == 'refs/heads/main' }}
